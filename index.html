@@ -90,7 +90,7 @@
             let tg = window.Telegram.WebApp;
             let buy = document.getElementById("buy");
             let order = document.getElementById("order");
-           
+            tg.expand();
 
             buy.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
@@ -103,24 +103,25 @@
                 let name = document.getElementById("user_name").value;
                 let email = document.getElementByID("user_email").value;
                 let phone = document.getElementById("user_phone").value;
+
                 if(name.length < 3) {
-                    document.getElementById("error").innerText = 'Ошибка в имени';
+                    document.getElementById("error").innerText = "Ошибка в имени";
                     return;
-                }
+                };
                 if(email.length < 5) {
-                    document.getElementById("error").innerText = 'Ошибка в Email';
+                    document.getElementById("error").innerText = "Ошибка в Email";
                     return;
-                }
+                };
                 if(phone.length < 5) {
-                    document.getElementById("error").innerText = 'Ошибка в Phone';
+                    document.getElementById("error").innerText = "Ошибка в Phone";
                     return;
                 }
-                let data = {
-                    name = name,
-                    email = email,
-                    phone = phone
-                }
-                tg.sendData(JSON.stringify(data));
+<!--                let data_user = {-->
+<!--                    'name_key' = name,-->
+<!--                    'email_key' = email,-->
+<!--                    'phone_key' = phone,-->
+<!--                };-->
+                tg.sendData(JSON.stringify(data_user));
                 tg.close();
             });
         </script>
