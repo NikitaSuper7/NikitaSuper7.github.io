@@ -69,6 +69,14 @@
 
     </style>
 </head>
+    <div id="main">
+        <h1>Онлайн магазин</h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam eu orci vel eros pharetra placerat ac varius justo. Donec ut sapien id ex hendrerit bibendum.
+        </p>
+        <button id="buy">Купить</button>
+    </div>
 <body>
     <form id="form">
         <input type="text" placeholder="Имя" id="user_name">
@@ -77,15 +85,8 @@
         <div id="error"></div>
         <button id="order"> Оформить</button>
     </form>
-    <div id="main">
-        <h1>Онлайн магазин</h1>
-        <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nullam eu orci vel eros pharetra placerat ac varius justo. Donec ut sapien id ex hendrerit bibendum.
-        </p>
-        <button id="buy">Купить</button>
-        <script src="https://telegram.org/js/telegram-web-app.js"></script>
-        <script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
 
             let tg = window.Telegram.WebApp;
             let buy = document.getElementById("buy");
@@ -104,7 +105,7 @@
                 let email = document.getElementByID("user_email").value;
                 let phone = document.getElementById("user_phone").value;
 
-                if(name.length < 3) {
+                if(document.getElementById("user_name").value.length < 10) {
                     document.getElementById("error").innerText = "Ошибка в имени";
                     return;
                 }
@@ -117,16 +118,14 @@
                     return;
                 }
                 let data_user = {
-                    name: name,
-                    email: email,
-                    phone: phone,
+                    name_us: name,
+                    email_us: email,
+                    phone_us: phone,
                 }
                 tg.sendData(data_user);
                 tg.close();
             });
-        </script>
-    </div>
-
+    </script>
 
 </body>
 </html>
