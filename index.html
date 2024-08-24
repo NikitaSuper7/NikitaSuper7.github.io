@@ -74,7 +74,7 @@
         <input type="text" placeholder="Имя" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
         <input type="text" placeholder="Phone" id="user_phone">
-        <div id="error"> </div>
+        <div id="error"></div>
         <button id="order"> Оформить</button>
     </form>
     <div id="main">
@@ -107,11 +107,11 @@
                 if(name.length < 3) {
                     document.getElementById("error").innerText = "Ошибка в имени";
                     return;
-                };
+                }
                 if(email.length < 5) {
                     document.getElementById("error").innerText = "Ошибка в Email";
                     return;
-                };
+                }
                 if(phone.length < 5) {
                     document.getElementById("error").innerText = "Ошибка в Phone";
                     return;
@@ -120,8 +120,8 @@
                     name: name,
                     email: email,
                     phone: phone,
-                };
-                tg.sendData(JSON.stringify(data_user));
+                }
+                tg.sendData(data_user);
                 tg.close();
             });
         </script>
