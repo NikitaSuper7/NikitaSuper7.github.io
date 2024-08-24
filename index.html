@@ -116,11 +116,11 @@
                     document.getElementById("error").innerText = "Ошибка в Phone";
                     return;
                 }
-<!--                let data_user = {-->
-<!--                    'name_key' = name,-->
-<!--                    'email_key' = email,-->
-<!--                    'phone_key' = phone,-->
-<!--                };-->
+                let data_user = {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                };
                 tg.sendData(JSON.stringify(data_user));
                 tg.close();
             });
